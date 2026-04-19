@@ -1,0 +1,13 @@
+{
+  "name": "freshdish",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install-all": "cd backend && npm install && cd ../client && npm install",
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd client && npm run dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "supertest": "^7.2.2"
+  }
+}
