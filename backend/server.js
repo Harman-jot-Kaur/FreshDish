@@ -1,7 +1,4 @@
-// Health check route for /api
-app.get("/api", (req, res) => {
-  res.send("API is running");
-});
+// ...existing code...
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
