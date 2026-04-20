@@ -7,6 +7,19 @@ const { requirePermission } = require("../middleware/permissions");
 
 const router = express.Router();
 
+// Admin: get all orders
+router.get(
+  "/",
+  protect,
+  requirePermission("manage_orders"),
+  async (req, res) => {
+    const orders = await Order.find()
+      .populate("user", "name email")
+      .sort({ createdAt: -1 });
+    res.json(orders);
+  },
+);
+
 // Kitchen staff: get all orders to process
 router.get(
   "/kitchen",
