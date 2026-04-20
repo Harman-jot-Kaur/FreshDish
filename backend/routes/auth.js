@@ -17,40 +17,7 @@ const router = express.Router();
 const generateToken = (id) =>
   jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: "7h" });
 
-// Change password route
-router.post(
-  "/change-password",
-  protect,
-  [
-    body("oldPassword").notEmpty().withMessage("Old password is required"),
-    body("newPassword")
-      .isLength({ min: 8 })
-      .withMessage("Password must be at least 8 characters")
-      .matches(/[a-z]/)
-      .withMessage("Password must contain at least one lowercase letter")
-      .matches(/[A-Z]/)
-      .withMessage("Password must contain at least one uppercase letter")
-      .matches(/[0-9]/)
-      .withMessage("Password must contain at least one number")
-      .matches(/[!@#$%^&*(),.?\":{}|<>]/)
-      .withMessage("Password must contain at least one special character"),
-  ],
-  async (req, res) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
-    }
-    const { oldPassword, newPassword } = req.body;
-    const user = await User.findById(req.user._id);
-    if (!user) return res.status(404).json({ message: "User not found" });
-    const isMatch = await bcrypt.compare(oldPassword, user.password);
-    if (!isMatch)
-      return res.status(400).json({ message: "Old password is incorrect" });
-    user.password = await bcrypt.hash(newPassword, 10);
-    await user.save();
-    res.json({ message: "Password changed successfully" });
-  },
-);
+// ...existing code...
 
 router.post(
   "/register",

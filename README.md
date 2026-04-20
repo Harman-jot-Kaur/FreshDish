@@ -2,6 +2,11 @@
 
 FreshDish is a full-stack restaurant ordering platform built with the MERN stack. It allows customers to browse a rich menu, add items to their cart, get smart suggestions, and place orders for pickup or delivery. Admins and kitchen staff can manage orders and menu items through dedicated dashboards.
 
+
+## Agile Workflow
+
+This project was managed using Agile practices with GitHub Projects. Work was broken down into small, manageable tasks and tracked on an Agile board with columns for Backlog, To Do, In Progress, Review/Testing, and Done. Tasks were moved through these workflow stages as development progressed, and sprints were used to organize and prioritize work. This approach helped ensure continuous progress, adaptability, and clear visibility into the project’s status.
+
 ## Features
 
 - **User Registration & Login:** Secure authentication for customers, admins, and kitchen staff.

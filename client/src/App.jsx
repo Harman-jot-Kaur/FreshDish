@@ -1,3 +1,5 @@
+
+
 import { useEffect, useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import NavBar from './components/NavBar';
@@ -14,7 +16,6 @@ import ProtectedRoute from './components/ProtectedRoute';
 import AdminRoute from './components/AdminRoute';
 import { getProfile } from './api';
 import { parseJwt } from './utils';
-
 import { useNavigate } from 'react-router-dom';
 
 
