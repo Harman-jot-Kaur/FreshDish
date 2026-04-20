@@ -151,9 +151,15 @@ FreshDish/
 - **Test failures:** Ensure all exports/imports match and mock data matches component/model requirements.
 
 ## Deployment
-- Deploy backend to Heroku, Render, or similar.
-- Deploy frontend to Vercel, Netlify, or similar.
-- Use MongoDB Atlas for cloud database.
+
+- Backend deployed to Render: https://freshdish.onrender.com
+- Frontend deployed to Vercel: https://fresh-dish.vercel.app/menu
+- MongoDB Atlas used for cloud database.
+
+## Live Demo
+
+- Backend API: https://freshdish.onrender.com/api
+- Frontend App: https://fresh-dish.vercel.app/menu
 
 ## License
 
